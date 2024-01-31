@@ -6,13 +6,24 @@
       <tr-col v-for="(weekday, weekdayIdx) in weekdays" :key="weekdayIdx">
         <template #header>{{ weekday.textContent }}</template>
 
-        <tr-task v-for="(task, taskIdx) in tasks[weekday.text]" :key="taskIdx">
-          <template #title> {{ task.title }} </template>
+        <div
+          v-if="tasks[weekday.text].length === 0"
+          class="main-page__tasks-empty"
+        >
+          Нет задач
+        </div>
+        <template v-else>
+          <tr-task
+            v-for="(task, taskIdx) in tasks[weekday.text]"
+            :key="taskIdx"
+          >
+            <template #title> {{ task.title }} </template>
 
-          <template #text>
-            {{ task.text }}
-          </template>
-        </tr-task>
+            <template #text>
+              {{ task.text }}
+            </template>
+          </tr-task>
+        </template>
       </tr-col>
     </div>
   </div>
