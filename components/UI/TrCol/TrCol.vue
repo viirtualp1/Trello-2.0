@@ -1,6 +1,8 @@
 <template>
   <div class="tr-col">
-    <slot name="header" />
+    <div class="tr-col__header">
+      <slot name="header" />
+    </div>
 
     <div class="tr-col__content">
       <slot />

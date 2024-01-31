@@ -1,11 +1,7 @@
 <template>
-  <div class="container content">
-    <tr-task title="test" />
-    <app-sidebar />
-  </div>
+  <main-page />
 </template>
 
 <script setup lang="ts">
-import { AppSidebar } from '@/components/App'
-import { TrTask } from '@/components/UI'
+import { MainPage } from '@/components/MainPage'
 </script>

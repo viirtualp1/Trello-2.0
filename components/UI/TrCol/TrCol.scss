@@ -1,0 +1,15 @@
+.tr-col {
+  min-width: 248px;
+
+  &__header {
+    text-transform: capitalize;
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}

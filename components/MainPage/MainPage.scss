@@ -1,0 +1,28 @@
+.main-page {
+  display: flex;
+  gap: 20px;
+
+  &.container {
+    padding-right: 0;
+  }
+
+  &__tasks {
+    display: flex;
+    overflow: auto;
+    padding-left: 20px;
+    padding-bottom: 20px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 4px;
+      background-color: rgba(26, 24, 47, 0.15);
+      border-radius: 5px;
+      padding-top: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #2d2d2d;
+      border-radius: 5px;
+    }
+  }
+}
