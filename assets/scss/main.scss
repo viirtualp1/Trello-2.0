@@ -1,0 +1,22 @@
+html,
+body {
+  overflow-x: hidden;
+  font-feature-settings: 'smcp' on;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-sm-up {
+    max-width: $container-width;
+  }
+}
+
+.content {
+  margin-bottom: 26px;
+  margin-top: 26px;
+}

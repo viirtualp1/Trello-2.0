@@ -1,0 +1,17 @@
+@import '../../../assets/scss/app';
+
+.tr-task {
+  max-width: 200px;
+  min-height: 140px;
+  border-radius: 12px;
+  box-shadow: 0 0 24px 0 rgba(34, 60, 80, 0.2);
+
+  @include media-sm-up {
+    padding: 24px;
+  }
+
+  &__title {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}
