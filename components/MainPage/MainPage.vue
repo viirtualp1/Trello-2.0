@@ -7,7 +7,7 @@
         <template #header>{{ weekday.textContent }}</template>
 
         <div
-          v-if="tasks[weekday.text].length === 0"
+          v-if="tasks[weekday.text] && tasks[weekday.text].length === 0"
           class="main-page__tasks-empty"
         >
           Нет задач
