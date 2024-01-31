@@ -4,9 +4,9 @@
 
     <div class="main-page__tasks">
       <tr-col v-for="(weekday, weekdayIdx) in weekdays" :key="weekdayIdx">
-        <template #header>{{ weekday }}</template>
+        <template #header>{{ weekday.textContent }}</template>
 
-        <tr-task v-for="(task, taskIdx) in tasks[weekday]" :key="taskIdx">
+        <tr-task v-for="(task, taskIdx) in tasks[weekday.text]" :key="taskIdx">
           <template #title> {{ task.title }} </template>
 
           <template #text>
@@ -23,13 +23,13 @@ import { AppSidebar } from '@/components/App'
 import { TrCol, TrTask } from '@/components/UI'
 
 const weekdays = computed(() => [
-  'monday',
-  'tuesday',
-  'wednesday',
-  'thursday',
-  'friday',
-  'saturday',
-  'sunday',
+  { text: 'monday', textContent: 'понедельник' },
+  { text: 'tuesday', textContent: 'вторник' },
+  { text: 'wednesday', textContent: 'среда' },
+  { text: 'thursday', textContent: 'четверг' },
+  { text: 'friday', textContent: 'пятница' },
+  { text: 'saturday', textContent: 'суббота' },
+  { text: 'sunday', textContent: 'воскресенье' },
 ])
 
 const tasks = computed(() => {
