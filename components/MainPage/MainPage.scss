@@ -1,13 +1,36 @@
+@import 'assets/scss/app';
+
 .main-page {
   display: flex;
   gap: 20px;
 
+  @include media-sm-up {
+    padding: 0 24px;
+  }
+
+  @include media-xl-up {
+    padding: 0;
+  }
+
   &__tasks {
     display: flex;
+    flex-direction: column;
     gap: 24px;
-    overflow: auto;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    width: 100%;
+    margin: 0 24px;
+
+    @include media-sm-up {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    @include media-md-up {
+      flex-wrap: nowrap;
+      overflow: auto;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      margin: 0;
+    }
 
     &::-webkit-scrollbar {
       width: 5px;

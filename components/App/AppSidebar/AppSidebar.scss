@@ -16,4 +16,8 @@
     font-size: 30px;
     margin-bottom: 16px;
   }
+
+  @include media-md-down {
+    display: none;
+  }
 }
