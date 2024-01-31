@@ -1,9 +1,10 @@
 .tr-col {
-  min-width: 250px;
+  min-width: 330px;
 
   &__header {
+    font-size: 24px;
     text-transform: capitalize;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     font-weight: bold;
   }
 
