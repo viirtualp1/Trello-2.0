@@ -1,13 +1,13 @@
 <template>
   <div class="container content main-page">
-    <button class="main-page__button-sidebar" @click="open">
-      <img src="../../../assets/icons/menu.svg" alt="menu" />
-    </button>
+    <tr-button class="main-page__button-menu" icon @click="open">
+      <img src="@/assets/icons/menu.svg" alt="menu" />
+    </tr-button>
 
-    <sidebar-filters class="md-up" />
+    <sidebar-filters class="main-page__sidebar" />
 
     <div class="main-page__content">
-      <sidebar-filters class="md-down" />
+      <sidebar-filters class="main-page__content-sidebar" />
 
       <div class="main-page__tasks">
         <tr-col v-for="(weekday, weekdayIdx) in weekdays" :key="weekdayIdx">
@@ -40,10 +40,10 @@
 </template>
 
 <script setup lang="ts">
-import { useSidebar } from '~/domains/App'
-import { TrCol, TrTask } from '~/domains/UI'
-import { AppSidebar } from '~/domains/App'
-import { SidebarFilters } from '~/domains/Filters'
+import { useSidebar } from '@/domains/App'
+import { TrCol, TrTask, TrButton } from '@/domains/UI'
+import { AppSidebar } from '@/domains/App'
+import { SidebarFilters } from '@/domains/Filters'
 
 const { isVisible, open } = useSidebar()
 
@@ -83,4 +83,4 @@ const tasks = computed(() => {
 })
 </script>
 
-<style lang="scss" src="MainPage.scss"></style>
+<style lang="scss" src="./MainPage.scss"></style>

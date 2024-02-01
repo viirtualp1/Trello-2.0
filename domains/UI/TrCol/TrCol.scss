@@ -1,5 +1,16 @@
+@import 'assets/scss/app';
+
 .tr-col {
-  min-width: 330px;
+  width: 100%;
+  margin: auto;
+
+  @include media-sm-up {
+    margin: 0;
+  }
+
+  @include media-md-up {
+    min-width: 330px;
+  }
 
   &__header {
     font-size: 24px;

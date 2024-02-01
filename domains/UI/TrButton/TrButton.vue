@@ -4,7 +4,9 @@
       <slot name="prepend" />
     </div>
 
-    <slot />
+    <div class="tr-button__body">
+      <slot />
+    </div>
 
     <div class="tr-button__append">
       <slot name="append" />
@@ -20,12 +22,16 @@ const props = defineProps({
     type: String as PropType<TrButtonAvailableTheme>,
     default: 'primary',
   },
+  icon: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const trButtonClasses = computed(() => {
-  const { theme } = props
+  const { theme, icon } = props
 
-  return [theme]
+  return [theme, { icon }]
 })
 </script>
 

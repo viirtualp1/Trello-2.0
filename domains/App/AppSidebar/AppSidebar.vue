@@ -1,5 +1,5 @@
 <template>
-  <Sidebar v-model:visible="currentIsVisible">
+  <Sidebar v-model:visible="currentIsVisible" :position="sidebarPosition">
     <p>Trello 2.0</p>
 
     <button
@@ -16,6 +16,7 @@
 
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
+import { useBreakpoints } from '@/domains/UI'
 import Sidebar from 'primevue/sidebar'
 import CalendarIcon from '@/assets/icons/calendar.svg'
 import NotesIcon from 'assets/icons/notes.svg'
@@ -32,7 +33,12 @@ const emit = defineEmits({
   'update:is-visible': (_v: boolean) => true,
 })
 
+const { greater } = useBreakpoints()
 const currentIsVisible = useVModel(props, 'isVisible', emit)
+
+const sidebarPosition = computed(() => {
+  return greater('lg').value ? 'left' : 'right'
+})
 
 const sidebarButtons = computed(() => [
   {

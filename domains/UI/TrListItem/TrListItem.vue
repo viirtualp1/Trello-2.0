@@ -1,5 +1,5 @@
 <template>
-  <div class="tr-button">
+  <div class="tr-list-item">
     <slot />
   </div>
 </template>
