@@ -1,5 +1,7 @@
 <template>
-  <div class="task-mobile-filters">
+  <div class="sidebar-filters">
+    <div class="sidebar-filters__title">Задачи</div>
+
     <tr-list-item
       v-for="(filter, idx) in filters"
       :key="idx"
@@ -11,11 +13,11 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { useFilters } from '@/composables/useFilters'
-import { TrListItem } from '~/components/UI'
+<script lang="ts" setup>
+import { TrListItem } from '@/components/UI'
+import { useFilters } from '../'
 
 const { currentFilter, filters, setFilter } = useFilters()
 </script>
 
-<style lang="scss" src="./TaskMobileFilters.scss"></style>
+<style lang="scss" src="./SidebarFilters.scss"></style>

@@ -1,12 +1,13 @@
 <template>
   <div class="container content main-page">
-    <button class="main-page__side-bar" @click="openSideMenu">
-      <img src="@/assets/icons/menu.svg" />
+    <button class="main-page__button-sidebar" @click="open">
+      <img src="@/assets/icons/menu.svg" alt="menu" />
     </button>
-    <app-sidebar />
+
+    <sidebar-filters class="md-up" />
 
     <div class="main-page__content">
-      <task-mobile-filters />
+      <sidebar-filters class="md-down" />
 
       <div class="main-page__tasks">
         <tr-col v-for="(weekday, weekdayIdx) in weekdays" :key="weekdayIdx">
@@ -33,28 +34,18 @@
         </tr-col>
       </div>
     </div>
-    <Sidebar v-model:visible="visible">
-      <p>Dota 2 - Beta</p>
-      <button class="main-page__sidebar-button" @click="">
-        <img src="@/assets/icons/calendar.svg" />Календарь
-      </button>
-      <button class="main-page__sidebar-button" @click="">
-        <img src="@/assets/icons/edit.svg" />Заметки
-      </button>
-      <button class="main-page__sidebar-button" @click="">
-        <img src="@/assets/icons/tasks.svg" />Задачи
-      </button>
-    </Sidebar>
+
+    <app-sidebar v-model:is-visible="isVisible" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { AppSidebar } from '@/components/App'
+import { useSidebar } from '@/components/App'
 import { TrCol, TrTask } from '@/components/UI'
-import { TaskMobileFilters } from '@/components/TaskMobileFilters'
-import Sidebar from 'primevue/sidebar'
+import { AppSidebar } from '@/components/App'
+import { SidebarFilters } from '@/components/Filters'
 
-const visible = ref(false)
+const { isVisible, open } = useSidebar()
 
 const weekdays = computed(() => [
   { text: 'monday', textContent: 'понедельник' },
@@ -90,10 +81,6 @@ const tasks = computed(() => {
     ],
   }
 })
-
-function openSideMenu() {
-  visible.value = true
-}
 </script>
 
 <style lang="scss" src="./MainPage.scss"></style>

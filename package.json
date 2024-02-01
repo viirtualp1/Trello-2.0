@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.2.0",
+    "@vueuse/core": "^10.7.2",
     "eslint": "^8.56.0",
     "eslint-config": "^0.3.0",
     "eslint-config-prettier": "^9.1.0",

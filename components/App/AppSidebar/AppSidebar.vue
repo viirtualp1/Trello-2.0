@@ -1,23 +1,53 @@
 <template>
-  <div class="app-sidebar">
-    <div class="app-sidebar__title">Задачи</div>
+  <Sidebar v-model:visible="currentIsVisible">
+    <p>Trello 2.0</p>
 
-    <tr-list-item
-      v-for="(filter, idx) in filters"
+    <button
+      v-for="(sidebarButton, idx) in sidebarButtons"
       :key="idx"
-      :class="{ 'is-active': filter.type === currentFilter }"
-      @click="setFilter(filter.type)"
+      class="main-page__sidebar-button"
     >
-      {{ filter.text }}
-    </tr-list-item>
-  </div>
+      <img :src="sidebarButton.icon" alt="calendar" />
+
+      {{ sidebarButton.text }}
+    </button>
+  </Sidebar>
 </template>
 
-<script lang="ts" setup>
-import { TrListItem } from '@/components/UI'
-import { useFilters } from '@/composables/useFilters'
+<script setup lang="ts">
+import { useVModel } from '@vueuse/core'
+import Sidebar from 'primevue/sidebar'
+import CalendarIcon from '@/assets/icons/calendar.svg'
+import NotesIcon from 'assets/icons/notes.svg'
+import TasksIcon from '@/assets/icons/tasks.svg'
 
-const { currentFilter, filters, setFilter } = useFilters()
+const props = defineProps({
+  isVisible: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+const emit = defineEmits({
+  'update:is-visible': (_v: boolean) => true,
+})
+
+const currentIsVisible = useVModel(props, 'isVisible', emit)
+
+const sidebarButtons = computed(() => [
+  {
+    text: 'Календарь',
+    icon: CalendarIcon,
+  },
+  {
+    text: 'Заметки',
+    icon: NotesIcon,
+  },
+  {
+    text: 'Задачи',
+    icon: TasksIcon,
+  },
+])
 </script>
 
 <style lang="scss" src="./AppSidebar.scss"></style>
