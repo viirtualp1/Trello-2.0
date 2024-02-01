@@ -1,0 +1,23 @@
+@import 'assets/scss/app';
+
+.tr-list-item {
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  color: $color-black;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    background: darken($color-primary, 1%);
+  }
+
+  &.is-active {
+    background: darken($color-primary, 5%);
+  }
+}

@@ -1,0 +1,23 @@
+.app-sidebar {
+}
+
+.p-sidebar {
+  background: #262635;
+  color: white;
+  padding: 14px;
+  border-right: 2px solid;
+  border-color: rgb(105, 103, 103);
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.p-sidebar-close > svg {
+  color: #fff;
+  display: flex;
+}
+
+.p-sidebar-header {
+  display: flex;
+  justify-content: right;
+  padding: 10px;
+}

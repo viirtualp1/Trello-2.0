@@ -1,14 +1,19 @@
+// colors
+$color-primary: #f3f4f6;
+$color-black: #000;
+
+// breakpoints
 $media-xs: 360px;
 $media-sm: 576px;
-$media-md: 992px;
+$media-md: 960px;
 $media-lg: 1200px;
-$media-xl: 1600px;
-$media-xxl: 2000px;
+$media-xl: 1904px;
 
+// width
 $container-width: 1300px;
-
 $aside-menu-width: 260px;
 
+// font family
 $base-font-family:
   'PT Sans',
   -apple-system,

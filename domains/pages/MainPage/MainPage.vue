@@ -1,12 +1,13 @@
 <template>
   <div class="container content main-page">
-    <button class="main-page__side-bar" @click="openSideMenu">
-      <img src="@/assets/icons/menu.svg" />
-    </button>
-    <app-sidebar />
+    <tr-button class="main-page__button-menu" icon @click="open">
+      <img src="@/assets/icons/menu.svg" alt="menu" />
+    </tr-button>
+
+    <sidebar-filters class="main-page__sidebar" />
 
     <div class="main-page__content">
-      <task-mobile-filters />
+      <sidebar-filters class="main-page__content-sidebar" />
 
       <div class="main-page__tasks">
         <tr-col v-for="(weekday, weekdayIdx) in weekdays" :key="weekdayIdx">
@@ -33,28 +34,18 @@
         </tr-col>
       </div>
     </div>
-    <Sidebar v-model:visible="visible">
-      <p>Dota 2 - Beta</p>
-      <button class="main-page__sidebar-button" @click="">
-        <img src="@/assets/icons/calendar.svg" />Календарь
-      </button>
-      <button class="main-page__sidebar-button" @click="">
-        <img src="@/assets/icons/edit.svg" />Заметки
-      </button>
-      <button class="main-page__sidebar-button" @click="">
-        <img src="@/assets/icons/tasks.svg" />Задачи
-      </button>
-    </Sidebar>
+
+    <app-sidebar v-model:is-visible="isVisible" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { AppSidebar } from '@/components/App'
-import { TrCol, TrTask } from '@/components/UI'
-import { TaskMobileFilters } from '@/components/TaskMobileFilters'
-import Sidebar from 'primevue/sidebar'
+import { useSidebar } from '@/domains/App'
+import { TrCol, TrTask, TrButton } from '@/domains/UI'
+import { AppSidebar } from '@/domains/App'
+import { SidebarFilters } from '@/domains/Filters'
 
-const visible = ref(false)
+const { isVisible, open } = useSidebar()
 
 const weekdays = computed(() => [
   { text: 'monday', textContent: 'понедельник' },
@@ -90,10 +81,6 @@ const tasks = computed(() => {
     ],
   }
 })
-
-function openSideMenu() {
-  visible.value = true
-}
 </script>
 
 <style lang="scss" src="./MainPage.scss"></style>

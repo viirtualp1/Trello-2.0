@@ -1,0 +1,47 @@
+@import 'assets/scss/app';
+
+.tr-button {
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+  vertical-align: middle;
+  padding: 0 20px;
+
+  &__body {
+    align-items: center;
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    transition:
+      opacity 0.2s,
+      transform 0.3s cubic-bezier(0.34, 1.7, 0.4, 1);
+    transition-delay: 0.3s;
+  }
+
+  &.icon {
+    height: 40px;
+    padding: 0 0.675rem;
+    border-radius: 12px;
+  }
+
+  &.primary {
+    background: $color-primary;
+
+    &:hover {
+      background: darken($color-primary, 5%);
+      color: $color-black;
+    }
+  }
+}

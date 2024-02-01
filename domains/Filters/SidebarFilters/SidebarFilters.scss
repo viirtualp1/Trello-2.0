@@ -1,0 +1,29 @@
+@import 'assets/scss/app';
+
+.sidebar-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @include media-md-up {
+    position: sticky;
+    z-index: 520;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    max-width: $aside-menu-width;
+    max-height: 100vh;
+    flex: 0 0 $aside-menu-width;
+  }
+
+  &__title {
+    font-size: 30px;
+    margin-bottom: 16px;
+
+    @include media-md-down {
+      display: none;
+    }
+  }
+}
