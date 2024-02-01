@@ -1,1 +1,1 @@
-export * from './TrButton'
+export * from './TrButton.d'

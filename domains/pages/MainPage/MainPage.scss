@@ -1,7 +1,7 @@
-@import '../../../assets/scss/app';
+@import 'assets/scss/app';
 
 .main-page {
-  @include media-sm-up {
+  @include media-md-up {
     display: flex;
     gap: 20px;
     padding: 0 24px;
@@ -11,17 +11,43 @@
     padding: 0;
   }
 
-  &__content {
-    margin: 0 24px;
-    overflow: hidden;
+  &__prepend {
+    flex: 0 0 260px;
   }
 
-  &__button-sidebar {
+  &__content {
+    margin: 0 24px;
+
+    @include media-md-up {
+      overflow: hidden;
+    }
+  }
+
+  &__sidebar {
+    @include hidden-md-down;
+  }
+
+  &__content-sidebar {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
+
+    @include media-md-up {
+      display: none;
+    }
+  }
+
+  &__button-menu {
+    position: fixed;
+    top: 26px;
+    left: auto;
+    right: 20px;
+    margin-bottom: 12px;
+    width: 24px !important;
+    height: 48px !important;
+
+    @include media-xl-up {
+      right: auto;
+      left: 20px;
+    }
   }
 
   &__sidebar-button {
@@ -40,7 +66,7 @@
     color: #fff;
 
     &:hover {
-      background: #323242;
+      background: #3b3b41;
       color: #7677c2;
     }
   }
