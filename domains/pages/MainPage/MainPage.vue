@@ -1,7 +1,7 @@
 <template>
   <div class="container content main-page">
     <button class="main-page__button-sidebar" @click="open">
-      <img src="@/assets/icons/menu.svg" alt="menu" />
+      <img src="../../../assets/icons/menu.svg" alt="menu" />
     </button>
 
     <sidebar-filters class="md-up" />
@@ -40,10 +40,10 @@
 </template>
 
 <script setup lang="ts">
-import { useSidebar } from '@/components/App'
-import { TrCol, TrTask } from '@/components/UI'
-import { AppSidebar } from '@/components/App'
-import { SidebarFilters } from '@/components/Filters'
+import { useSidebar } from '~/domains/App'
+import { TrCol, TrTask } from '~/domains/UI'
+import { AppSidebar } from '~/domains/App'
+import { SidebarFilters } from '~/domains/Filters'
 
 const { isVisible, open } = useSidebar()
 
@@ -83,4 +83,4 @@ const tasks = computed(() => {
 })
 </script>
 
-<style lang="scss" src="./MainPage.scss"></style>
+<style lang="scss" src="MainPage.scss"></style>

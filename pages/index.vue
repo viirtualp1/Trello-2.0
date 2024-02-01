@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import { MainPage } from '@/components/MainPage'
+import { MainPage } from '@/domains/pages'
 </script>

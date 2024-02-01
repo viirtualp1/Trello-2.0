@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import { TrListItem } from '@/components/UI'
+import { TrListItem } from '@/domains/UI'
 import { useFilters } from '../'
 
 const { currentFilter, filters, setFilter } = useFilters()
