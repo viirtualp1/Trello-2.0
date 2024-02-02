@@ -26,4 +26,9 @@
       display: none;
     }
   }
+
+  &__divider,
+  &__new-task {
+    @include hidden-md-down;
+  }
 }
