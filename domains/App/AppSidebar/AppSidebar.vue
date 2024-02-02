@@ -5,6 +5,8 @@
     <tr-list-item
       v-for="(sidebarButton, idx) in sidebarButtons"
       :key="idx"
+      :to="sidebarButton.link"
+      :is-active="sidebarButton.isActive"
       class="app-sidebar__button"
     >
       <img :src="sidebarButton.icon" alt="calendar" width="20" height="20" />
@@ -23,6 +25,7 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'nuxt/app'
 import { lock, unlock } from 'tua-body-scroll-lock'
 import { useSidebar } from '@/domains/App'
 import {
@@ -38,6 +41,7 @@ import CalendarIcon from '@/assets/icons/calendar.svg'
 import NotesIcon from 'assets/icons/notes.svg'
 import TasksIcon from '@/assets/icons/tasks.svg'
 
+const route = useRoute()
 const { isOpen } = useSidebar()
 const { greater } = useBreakpoints()
 
@@ -58,18 +62,26 @@ const sidebarButtons = computed(() => [
   {
     text: 'Главная',
     icon: HomeIcon,
+    link: '/',
+    isActive: route.name === 'index',
   },
   {
     text: 'Календарь',
     icon: CalendarIcon,
+    link: '/calendar',
+    isActive: route.name === 'calendar',
   },
   {
     text: 'Заметки',
     icon: NotesIcon,
+    link: '/notes',
+    isActive: route.name === 'notes',
   },
   {
     text: 'Задачи',
     icon: TasksIcon,
+    link: '/tasks',
+    isActive: route.name === 'tasks',
   },
 ])
 </script>
