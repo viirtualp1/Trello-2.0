@@ -1,17 +1,14 @@
 <template>
   <Teleport to="body">
-    <aside
-      class="tr-sidebar"
-      :class="[{ 'is-open': isOpen }, position]"
-      @click="hide"
-    >
+    <aside class="tr-sidebar" :class="{ 'is-open': isOpen }" @click="hide">
       <transition name="fade">
         <div v-show="isOpen" class="tr-sidebar__overlay"></div>
       </transition>
 
-      <transition name="slide-x-left">
+      <transition :name="transitionName">
         <div
           v-show="isOpen"
+          :class="position"
           role="dialog"
           tab-index="-1"
           aria-popup="true"
@@ -50,7 +47,7 @@
 import { useSidebar } from '@/domains/App'
 import { TrButton } from '~/domains/UI'
 
-defineProps({
+const props = defineProps({
   position: {
     type: String as PropType<'right' | 'left'>,
     default: 'left',
@@ -58,6 +55,10 @@ defineProps({
 })
 
 const { isOpen, hide } = useSidebar()
+
+const transitionName = computed(() => {
+  return props.position === 'left' ? 'slide-x-left' : 'slide-x-right'
+})
 </script>
 
 <style lang="scss" src="./TrSidebar.scss"></style>
