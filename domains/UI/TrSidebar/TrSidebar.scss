@@ -1,10 +1,6 @@
 @import 'assets/scss/app';
 
 .tr-sidebar {
-  &.right {
-    justify-content: flex-end;
-  }
-
   &__dialog {
     position: fixed;
     width: 100%;
@@ -14,6 +10,10 @@
     display: flex;
     align-items: center;
     z-index: 1101;
+
+    &.right {
+      justify-content: flex-end;
+    }
   }
 
   &__overlay {
