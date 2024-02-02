@@ -45,7 +45,7 @@ const appSidebarRef = ref<HTMLElement | null>(null)
 
 watch(
   () => isOpen.value,
-  (v: boolean) => {
+  (v: boolean | undefined) => {
     return v ? lock(appSidebarRef.value) : unlock(appSidebarRef.value)
   },
 )
