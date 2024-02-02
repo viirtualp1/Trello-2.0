@@ -14,6 +14,14 @@
       padding: 8px;
     }
   }
+
+  &__auth {
+    max-width: 240px;
+    padding-left: 12px;
+    font-size: 16px;
+    color: #4f4f5e;
+    font-weight: 400;
+  }
 }
 
 .p-sidebar {
