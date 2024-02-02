@@ -14,6 +14,14 @@
 
       {{ sidebarButton.text }}
     </tr-list-item>
+
+    <tr-divider />
+
+    <div class="app-sidebar__auth">
+      <p>Войдите, чтобы использовать все возможности Trello 2.0</p>
+
+      <tr-button>Войти</tr-button>
+    </div>
   </Sidebar>
 </template>
 
@@ -23,10 +31,12 @@ import { useVModel } from '@vueuse/core'
 import { useBreakpoints } from '@/domains/UI'
 import Sidebar from 'primevue/sidebar'
 import { TrListItem } from '@/domains/UI'
+import { TrDivider } from '@/domains/UI'
 import HomeIcon from '@/assets/icons/home.svg'
 import CalendarIcon from '@/assets/icons/calendar.svg'
 import NotesIcon from 'assets/icons/notes.svg'
 import TasksIcon from '@/assets/icons/tasks.svg'
+import { TrButton } from '~/domains/UI'
 
 const props = defineProps({
   isVisible: {

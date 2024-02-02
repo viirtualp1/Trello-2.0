@@ -24,6 +24,7 @@
     display: flex;
     height: inherit;
     justify-content: center;
+    color: $color-black;
     transition:
       opacity 0.2s,
       transform 0.3s cubic-bezier(0.34, 1.7, 0.4, 1);
