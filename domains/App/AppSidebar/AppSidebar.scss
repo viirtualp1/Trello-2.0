@@ -7,7 +7,7 @@
     transition: 0.3s ease;
 
     &:hover {
-      box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+      @include generate-box-shadow;
     }
 
     @include media-sm-down {
