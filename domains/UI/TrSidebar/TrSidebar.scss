@@ -1,48 +1,51 @@
 @import 'assets/scss/app';
 
 .tr-sidebar {
-  &__dialog {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    z-index: 1101;
-
-    &.right {
-      justify-content: flex-end;
-    }
-  }
-
   &__overlay {
-    background-color: rgba(36, 36, 64, 0.4);
-    height: 100%;
-    left: 0;
     position: fixed;
+    left: 0;
     top: 0;
+    height: 100%;
     width: 100vw;
     z-index: 520;
+    background-color: rgba(36, 36, 64, 0.4);
   }
 
-  &__content {
-    min-width: 300px;
-    padding: 20px;
-    border-color: #696767;
-    background: $color-white;
-    color: #fff;
-    font-size: 22px;
-    font-weight: 600;
+  &__dialog {
+    position: fixed;
+    width: 100vw;
     height: 100%;
-    z-index: 1000;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    z-index: 1050;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin-left: auto;
+    background: $color-white;
+    overflow: hidden;
+    position: relative;
+    z-index: 50;
+    max-width: 300px;
+    padding: 20px;
+
+    .is-left & {
+      margin-left: 0;
+      margin-right: auto;
+    }
   }
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 26px 0 20px 8px;
+    padding: 0 0 20px 8px;
     color: $color-black;
     font-size: 24px;
   }
