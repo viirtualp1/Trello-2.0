@@ -1,25 +1,49 @@
 <template>
-  <div class="tr-sidebar" :class="[{ 'is-open': isOpen }, position]">
-    <div class="tr-sidebar__overlay"></div>
-    <div class="tr-sidebar__content">
-      <div class="tr-sidebar__header">
-        <slot name="header" />
+  <Teleport to="body">
+    <aside
+      class="tr-sidebar"
+      :class="[{ 'is-open': isOpen }, position]"
+      @click="hide"
+    >
+      <transition name="fade">
+        <div v-show="isOpen" class="tr-sidebar__overlay"></div>
+      </transition>
 
-        <tr-button class="tr-sidebar__close" theme="ghost" icon @click="hide">
-          <img
-            src="@/assets/icons/close.svg"
-            alt="close"
-            width="20"
-            height="20"
-          />
-        </tr-button>
-      </div>
+      <transition name="slide-x-left">
+        <div
+          v-show="isOpen"
+          role="dialog"
+          tab-index="-1"
+          aria-popup="true"
+          class="tr-sidebar__dialog"
+        >
+          <div class="tr-sidebar__content">
+            <div class="tr-sidebar__header">
+              <slot name="header" />
 
-      <div class="tr-sidebar__body">
-        <slot />
-      </div>
-    </div>
-  </div>
+              <tr-button
+                class="tr-sidebar__close"
+                theme="ghost"
+                icon
+                @click="hide"
+              >
+                <img
+                  src="@/assets/icons/close.svg"
+                  alt="close"
+                  width="20"
+                  height="20"
+                />
+              </tr-button>
+            </div>
+
+            <div class="tr-sidebar__body">
+              <slot />
+            </div>
+          </div>
+        </div>
+      </transition>
+    </aside>
+  </Teleport>
 </template>
 
 <script setup lang="ts">

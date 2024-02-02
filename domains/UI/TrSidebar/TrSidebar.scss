@@ -1,22 +1,19 @@
 @import 'assets/scss/app';
 
 .tr-sidebar {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  display: none;
-  align-items: center;
-  z-index: 1101;
-
-  &.is-open {
-    display: flex;
+  &.right {
+    justify-content: flex-end;
   }
 
-  &.right {
-    left: auto;
+  &__dialog {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
     right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1101;
   }
 
   &__overlay {
