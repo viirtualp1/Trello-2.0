@@ -2,7 +2,7 @@
 
 .app-sidebar {
   &__button {
-    width: 87%;
+    width: 95%;
     height: 24px;
     transition: 0.3s ease;
 
@@ -10,8 +10,12 @@
       @include generate-box-shadow;
     }
 
+    @include media-sm-up {
+      width: 87%;
+    }
+
     @include media-sm-down {
-      padding: 8px;
+      padding: 8px 14px;
     }
   }
 
