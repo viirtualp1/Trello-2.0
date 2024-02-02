@@ -24,7 +24,8 @@
   }
 
   &__divider,
-  &__new-task {
+  &__new-task,
+  &__title {
     @include media-md-down {
       display: none;
     }
