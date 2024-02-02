@@ -40,9 +40,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSidebar } from '@/domains/App'
+import { useSidebar, AppSidebar } from '@/domains/App'
 import { TrCol, TrTask, TrButton } from '@/domains/UI'
-import { AppSidebar } from '@/domains/App'
 import { SidebarFilters } from '@/domains/Filters'
 
 const { show } = useSidebar()
@@ -80,6 +79,10 @@ const tasks = computed(() => {
       },
     ],
   }
+})
+
+useHead({
+  title: 'Trello 2.0',
 })
 </script>
 
