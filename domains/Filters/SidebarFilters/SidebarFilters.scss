@@ -21,7 +21,10 @@
   &__title {
     font-size: 30px;
     margin-bottom: 16px;
+  }
 
+  &__divider,
+  &__new-task {
     @include media-md-down {
       display: none;
     }
