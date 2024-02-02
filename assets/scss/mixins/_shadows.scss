@@ -1,0 +1,3 @@
+@mixin generate-box-shadow($value: 4px 4px 8px 0 rgba(34, 60, 80, 0.2)) {
+  box-shadow: $value;
+}
