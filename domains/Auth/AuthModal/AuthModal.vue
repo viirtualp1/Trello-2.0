@@ -11,16 +11,13 @@ import { useVModel } from '@vueuse/core'
 import { AuthForm } from '@/domains/Auth'
 import { TrModal } from '@/domains/UI'
 
-const props = defineProps({
-  isOpen: {
-    type: Boolean,
-    default: false,
-  },
-})
+const props = defineProps<{
+  isOpen: boolean
+}>()
 
-const emit = defineEmits({
-  'update:is-open': (_v: boolean) => true,
-})
+const emit = defineEmits<{
+  (e: 'update:is-open', value: boolean): void
+}>()
 
 const currentIsOpen = useVModel(props, 'isOpen', emit)
 

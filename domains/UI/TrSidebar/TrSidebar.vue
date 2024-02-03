@@ -48,12 +48,9 @@
 import { useSidebar } from '@/domains/App'
 import { TrButton } from '@/domains/UI'
 
-const props = defineProps({
-  position: {
-    type: String as PropType<'right' | 'left'>,
-    default: 'left',
-  },
-})
+const props = defineProps<{
+  position: 'right' | 'left'
+}>()
 
 const { isOpen, hide } = useSidebar()
 

@@ -19,20 +19,14 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
 
-const props = defineProps({
-  modelValue: {
-    type: [String, Number, Object] as PropType<string | number | null>,
-    default: null,
-  },
-  label: {
-    type: String,
-    default: null,
-  },
-})
+const props = defineProps<{
+  modelValue: string | number | null
+  label: string | null
+}>()
 
-const emit = defineEmits({
-  'update:model-value': (_v: string | number | null) => true,
-})
+const emit = defineEmits<{
+  (e: 'update:model-value', v: string | number | null): void
+}>()
 
 const currentModelValue = useVModel(props, 'modelValue', emit)
 </script>

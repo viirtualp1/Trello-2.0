@@ -17,20 +17,11 @@
 <script setup lang="ts">
 import type { TrButtonAvailableTheme } from './types'
 
-const props = defineProps({
-  theme: {
-    type: String as PropType<TrButtonAvailableTheme>,
-    default: 'primary',
-  },
-  icon: {
-    type: Boolean,
-    default: false,
-  },
-  block: {
-    type: Boolean,
-    default: false,
-  },
-})
+const props = defineProps<{
+  theme: TrButtonAvailableTheme
+  icon: boolean
+  block: boolean
+}>()
 
 const trButtonClasses = computed(() => {
   const { theme, icon, block } = props

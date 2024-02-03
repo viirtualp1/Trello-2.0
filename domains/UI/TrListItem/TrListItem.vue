@@ -10,16 +10,10 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  to: {
-    type: String,
-    default: null,
-  },
-  isActive: {
-    type: Boolean,
-    default: false,
-  },
-})
+const props = defineProps<{
+  to: string
+  isActive: boolean
+}>()
 
 const componentName = computed(() => {
   return props.to ? 'router-link' : 'div'
