@@ -18,9 +18,9 @@
 import type { TrButtonAvailableTheme } from './types'
 
 const props = defineProps<{
-  theme: TrButtonAvailableTheme
-  icon: boolean
-  block: boolean
+  theme?: TrButtonAvailableTheme
+  icon?: boolean
+  block?: boolean
 }>()
 
 const trButtonClasses = computed(() => {
