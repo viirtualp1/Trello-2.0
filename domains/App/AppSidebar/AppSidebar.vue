@@ -19,9 +19,11 @@
     <div class="app-sidebar__auth">
       <p>Войдите, чтобы использовать все возможности Trello 2.0</p>
 
-      <tr-button>Войти</tr-button>
+      <tr-button @click="open">Войти</tr-button>
     </div>
   </tr-sidebar>
+
+  <auth-modal :is-open="isModalOpen" @close="close" />
 </template>
 
 <script setup lang="ts">
@@ -34,7 +36,9 @@ import {
   TrDivider,
   TrSidebar,
   useBreakpoints,
+  useModal,
 } from '@/domains/UI'
+import { AuthModal } from '@/domains/Auth'
 
 import HomeIcon from '@/assets/icons/home.svg'
 import CalendarIcon from '@/assets/icons/calendar.svg'
@@ -44,6 +48,7 @@ import TasksIcon from '@/assets/icons/tasks.svg'
 const route = useRoute()
 const { isOpen } = useSidebar()
 const { greater } = useBreakpoints()
+const { isOpen: isModalOpen, open, close } = useModal()
 
 const appSidebarRef = ref<HTMLElement | null>(null)
 
