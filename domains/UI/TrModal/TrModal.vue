@@ -1,6 +1,6 @@
 <template>
   <Teleport to="body">
-    <div ref="trModalRef" class="tr-modal" :class="{ 'is-open': isOpen }">
+    <div class="tr-modal" :class="{ 'is-open': isOpen }">
       <div
         class="tr-modal__dialog"
         tabindex="-1"
