@@ -1,11 +1,6 @@
 <template>
   <Teleport to="body">
-    <div
-      ref="trModalRef"
-      class="tr-modal"
-      :class="{ 'is-open': isOpen }"
-      @click="close"
-    >
+    <div ref="trModalRef" class="tr-modal" :class="{ 'is-open': isOpen }">
       <div
         class="tr-modal__dialog"
         tabindex="-1"
@@ -13,10 +8,15 @@
         :aria-popup="isOpen"
       >
         <div class="tr-modal__wrapper" :style="`max-width: ${maxWidth}px`">
-          <div class="tr-modal__overlay"></div>
+          <div class="tr-modal__overlay" @click="close"></div>
           <div class="tr-modal__container">
             <tr-button class="tr-modal__close-button" theme="ghost" icon>
-              <img src="@/assets/icons/close.svg" alt="close" />
+              <img
+                src="@/assets/icons/close.svg"
+                alt="close"
+                width="16"
+                height="16"
+              />
             </tr-button>
 
             <div class="tr-modal__header">
@@ -46,23 +46,17 @@ defineProps({
     type: Number,
     default: null,
   },
+  closeOnClickOutside: {
+    type: Boolean,
+    default: true,
+  },
 })
 
 const emit = defineEmits({
   close: () => true,
 })
 
-function close(e: Event | null) {
-  // TODO: О великий костыль (временный)
-  console.log(e)
-  if (
-    !e ||
-    !e.target ||
-    (e.target as HTMLElement).className.includes('tr-modal__container')
-  ) {
-    return
-  }
-
+function close() {
   emit('close')
 }
 </script>

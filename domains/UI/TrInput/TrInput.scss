@@ -1,0 +1,47 @@
+@import 'assets/scss/app';
+
+.tr-input {
+  position: relative;
+  margin-bottom: 16px;
+  color: #0a0a0d;
+  cursor: text;
+  font-size: 16px;
+  outline: none;
+  text-align: left;
+
+  &__box {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 12px;
+    background-color: $color-white;
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px #f3f5f6;
+    color: $color-black;
+    cursor: inherit;
+    overflow: hidden;
+    border: 1px solid #d8d8da;
+    transition:
+      background-color 0.15s,
+      box-shadow 0.1s;
+  }
+
+  &__container {
+    position: relative;
+    align-self: stretch;
+    flex-grow: 1;
+    padding-top: 12px;
+  }
+
+  input {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: inherit;
+    font: inherit;
+    line-height: 1.3;
+    outline: none;
+    width: 100%;
+  }
+}

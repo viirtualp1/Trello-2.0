@@ -1,13 +1,15 @@
 <template>
-  <tr-modal :is-open="currentIsOpen" :max-width="400" @close="close">
+  <tr-modal :is-open="currentIsOpen" :max-width="500" @close="close">
+    <template #title> Войти </template>
+
     <auth-form />
   </tr-modal>
 </template>
 
 <script setup lang="ts">
+import { useVModel } from '@vueuse/core'
 import { AuthForm } from '@/domains/Auth'
 import { TrModal } from '@/domains/UI'
-import { useVModel } from '@vueuse/core'
 
 const props = defineProps({
   isOpen: {

@@ -26,12 +26,16 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  block: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const trButtonClasses = computed(() => {
-  const { theme, icon } = props
+  const { theme, icon, block } = props
 
-  return [theme, { icon }]
+  return [theme, { icon, block }]
 })
 </script>
 
