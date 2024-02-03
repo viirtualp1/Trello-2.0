@@ -10,7 +10,12 @@
         <div class="tr-modal__wrapper" :style="`max-width: ${maxWidth}px`">
           <div class="tr-modal__overlay" @click="close"></div>
           <div class="tr-modal__container">
-            <tr-button class="tr-modal__close-button" theme="ghost" icon>
+            <tr-button
+              class="tr-modal__close-button"
+              theme="ghost"
+              icon
+              @click="close"
+            >
               <img
                 src="@/assets/icons/close.svg"
                 alt="close"
