@@ -1,12 +1,16 @@
 <template>
-  <div class="tr-input">
+  <div class="tr-input" @click="focusOnInput">
     <div v-if="$slots.prepend" class="tr-input__prepend">
       <slot name="prepend" />
     </div>
 
     <div class="tr-input__box">
       <div class="tr-input__container">
-        <input v-model="currentModelValue" :placeholder="label" />
+        <input
+          ref="inputRef"
+          v-model="currentModelValue"
+          :placeholder="label"
+        />
       </div>
     </div>
 
@@ -29,6 +33,12 @@ const emit = defineEmits<{
 }>()
 
 const currentModelValue = useVModel(props, 'modelValue', emit)
+
+const inputRef = ref<HTMLInputElement | null>(null)
+
+function focusOnInput() {
+  inputRef.value?.focus()
+}
 </script>
 
 <style lang="scss" src="./TrInput.scss"></style>

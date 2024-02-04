@@ -1,2 +1,5 @@
 export * from './AuthForm'
 export * from './AuthModal'
+export * from './auth.d'
+export * from './store'
+export * from './composables'

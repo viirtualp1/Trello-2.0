@@ -24,6 +24,10 @@
     align-items: flex-end;
     min-height: 100%;
 
+    @include media-sm-down {
+      max-width: 100% !important;
+    }
+
     @include media-sm-up {
       align-items: center;
       margin: 1.75rem auto;

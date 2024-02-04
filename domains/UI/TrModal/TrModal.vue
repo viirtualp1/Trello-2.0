@@ -42,11 +42,17 @@
 <script setup lang="ts">
 import { TrButton } from '@/domains/UI'
 
-defineProps<{
-  isOpen: boolean
-  maxWidth: number
-  closeOnClickOutside: boolean
-}>()
+withDefaults(
+  defineProps<{
+    isOpen: boolean
+    maxWidth?: number
+    closeOnClickOutside?: boolean
+  }>(),
+  {
+    maxWidth: 500,
+    closeOnClickOutside: true,
+  },
+)
 
 const emit = defineEmits<{
   (e: 'close'): void

@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  to: string
-  isActive: boolean
+  to?: string
+  isActive?: boolean
 }>()
 
 const componentName = computed(() => {
