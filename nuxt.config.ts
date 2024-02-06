@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  ssr: false,
   css: ['@/assets/scss/app.scss'],
-  modules: ['nuxt-primevue'],
+  modules: ['@pinia/nuxt'],
+  plugins: ['@/plugins/FirebasePlugin'],
+  devtools: { enabled: false },
 })

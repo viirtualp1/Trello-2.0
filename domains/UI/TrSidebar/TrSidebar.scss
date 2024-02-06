@@ -1,0 +1,65 @@
+@import 'assets/scss/app';
+
+.tr-sidebar {
+  &__overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 520;
+    background-color: rgba(36, 36, 64, 0.4);
+  }
+
+  &__dialog {
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    outline: 0;
+    z-index: 1050;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: auto;
+    background: $color-white;
+    overflow: hidden;
+    position: relative;
+    z-index: 50;
+    max-width: 300px;
+    padding: 20px;
+
+    .is-left & {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 20px 8px;
+    color: $color-black;
+    font-size: 24px;
+  }
+
+  &__close {
+    width: 24px !important;
+    height: 48px !important;
+  }
+
+  &__body {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+  }
+}

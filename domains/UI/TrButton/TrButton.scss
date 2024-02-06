@@ -24,6 +24,7 @@
     display: flex;
     height: inherit;
     justify-content: center;
+    color: $color-black;
     transition:
       opacity 0.2s,
       transform 0.3s cubic-bezier(0.34, 1.7, 0.4, 1);
@@ -36,12 +37,17 @@
     border-radius: 12px;
   }
 
+  &.block {
+    width: 100%;
+    padding: 0;
+  }
+
   &.primary {
     background: $color-primary;
+    color: $color-black;
 
     &:hover {
       background: darken($color-primary, 5%);
-      color: $color-black;
     }
   }
 }

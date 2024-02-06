@@ -50,27 +50,6 @@
     }
   }
 
-  &__sidebar-button {
-    width: 100%;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 14px;
-    font-size: 18px;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 600;
-    color: #fff;
-
-    &:hover {
-      background: #3b3b41;
-      color: #7677c2;
-    }
-  }
-
   &__tasks {
     display: flex;
     flex-direction: column;

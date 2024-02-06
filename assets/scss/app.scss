@@ -1,7 +1,13 @@
-@import 'mixins/media';
+// fonts
 @import 'assets/fonts';
 
+// mixins
+@import 'mixins/media';
+@import 'mixins/shadows';
+
+// utils
 @import 'utils/variables';
 @import 'utils/typography';
+@import 'utils/vue-transitions';
 
 @import 'main';

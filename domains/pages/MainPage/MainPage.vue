@@ -1,6 +1,6 @@
 <template>
   <div class="container content main-page">
-    <tr-button class="main-page__button-menu" icon @click="open">
+    <tr-button class="main-page__button-menu" icon @click="show">
       <img src="@/assets/icons/menu.svg" alt="menu" />
     </tr-button>
 
@@ -35,17 +35,16 @@
       </div>
     </div>
 
-    <app-sidebar v-model:is-visible="isVisible" />
+    <app-sidebar />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useSidebar } from '@/domains/App'
+import { useSidebar, AppSidebar } from '@/domains/App'
 import { TrCol, TrTask, TrButton } from '@/domains/UI'
-import { AppSidebar } from '@/domains/App'
 import { SidebarFilters } from '@/domains/Filters'
 
-const { isVisible, open } = useSidebar()
+const { show } = useSidebar()
 
 const weekdays = computed(() => [
   { text: 'monday', textContent: 'понедельник' },
@@ -80,6 +79,10 @@ const tasks = computed(() => {
       },
     ],
   }
+})
+
+useHead({
+  title: 'Trello 2.0',
 })
 </script>
 

@@ -1,22 +1,24 @@
+import { useSidebarStore } from '../../store'
+
 export function useSidebar() {
-  const isVisible = ref(false)
+  const sidebarStore = useSidebarStore()
+  const { show, hide, setIsOpen } = sidebarStore
+
+  const isOpen = computed(() => sidebarStore.isOpen)
 
   function toggle() {
-    isVisible.value = !isVisible.value
-  }
-
-  function open() {
-    isVisible.value = true
-  }
-
-  function close() {
-    isVisible.value = false
+    if (isOpen.value === undefined || isOpen.value === true) {
+      hide()
+    } else {
+      show()
+    }
   }
 
   return {
-    isVisible,
+    isOpen,
     toggle,
-    open,
-    close,
+    show,
+    hide,
+    setIsOpen,
   }
 }
