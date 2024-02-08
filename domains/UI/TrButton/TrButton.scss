@@ -44,10 +44,13 @@
 
   &.primary {
     background: $color-primary;
-    color: $color-black;
 
     &:hover {
       background: darken($color-primary, 5%);
     }
+  }
+
+  &.ghost {
+    background: transparent;
   }
 }
