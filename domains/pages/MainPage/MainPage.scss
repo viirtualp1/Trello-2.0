@@ -49,44 +49,4 @@
       left: 20px;
     }
   }
-
-  &__tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    width: 100%;
-
-    @include media-sm-up {
-      flex-wrap: wrap;
-      flex-direction: row;
-    }
-
-    @include media-md-up {
-      flex-wrap: nowrap;
-      overflow: auto;
-      margin: 0 24px;
-      padding-left: 20px;
-      padding-bottom: 20px;
-    }
-
-    @include media-lg-up {
-      margin: 0;
-    }
-
-    &::-webkit-scrollbar {
-      width: 5px;
-      height: 8px;
-      background-color: rgba(26, 24, 47, 0.15);
-      border-radius: 6px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: #2d2d2d;
-      border-radius: 8px;
-    }
-  }
-
-  &__tasks-empty {
-    color: #736d6d;
-  }
 }

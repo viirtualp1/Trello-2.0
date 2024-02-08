@@ -5,7 +5,7 @@
     </div>
 
     <div class="tr-task__content">
-      <slot name="text" />
+      <slot />
     </div>
   </div>
 </template>

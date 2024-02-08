@@ -1,0 +1,9 @@
+@import 'assets/scss/app';
+
+.tasks-week {
+  @include generate-tasks-styles;
+
+  &__empty-text {
+    color: #736d6d;
+  }
+}
