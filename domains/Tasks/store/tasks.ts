@@ -15,7 +15,6 @@ export const useTasksStore = defineStore('tasks', {
 
       for (let i = 0; i < 8; i++) {
         const weekdaysIdx = getRandomNumber(0, weekdays.length - 1)
-        console.log(weekdaysIdx)
 
         tasks.push({
           title: `Задание #${i}`,
