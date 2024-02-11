@@ -9,6 +9,8 @@
     <div class="main-page__content">
       <sidebar-filters class="main-page__content-sidebar" />
 
+      <auth-sign-in-form />
+
       <div class="main-page__tasks">
         <tr-col v-for="(weekday, weekdayIdx) in weekdays" :key="weekdayIdx">
           <template #header>{{ weekday.textContent }}</template>
@@ -43,6 +45,7 @@
 import { useSidebar, AppSidebar } from '@/domains/App'
 import { TrCol, TrTask, TrButton } from '@/domains/UI'
 import { SidebarFilters } from '@/domains/Filters'
+import { AuthSignInForm } from '@/domains/Auth/AuthSignInForm'
 
 const { show } = useSidebar()
 

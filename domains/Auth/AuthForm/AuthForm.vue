@@ -4,6 +4,8 @@
 
     <tr-input v-model="form.password" label="Пароль" />
 
+    <tr-button theme="ghost" @click="">Зарегистрироваться</tr-button>
+
     <tr-button block @click="submit">Войти</tr-button>
   </div>
 </template>

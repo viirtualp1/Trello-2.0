@@ -2,7 +2,7 @@
   <tr-modal :is-open="currentIsOpen" :max-width="500" @close="close">
     <template #title> Войти </template>
 
-    <auth-form />
+    <auth-form v-if="activeTab === 'auth'"></auth-form>
   </tr-modal>
 </template>
 
@@ -10,6 +10,10 @@
 import { useVModel } from '@vueuse/core'
 import { AuthForm } from '@/domains/Auth'
 import { TrModal } from '@/domains/UI'
+
+type TabType = 'registration' | 'auth'
+
+const activeTab = ref<TabType>('auth')
 
 const props = defineProps<{
   isOpen: boolean
