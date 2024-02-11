@@ -1,22 +1,24 @@
-enum FilterType {
-  ALL = 'all',
-  WEEK = 'week',
-}
+import { FilterType, useFiltersStore } from '@/domains/Filters'
+
 export function useFilters() {
-  const currentFilter = ref(FilterType.ALL)
+  const filtersStore = useFiltersStore()
+
+  const currentFilter = computed(() => filtersStore.filter)
 
   const filters = [
-    { text: 'Все', type: FilterType.ALL },
-    { text: 'На неделю', type: FilterType.WEEK },
+    {
+      type: FilterType.ALL,
+      text: 'Все',
+    },
+    {
+      type: FilterType.WEEK,
+      text: 'На неделю',
+    },
   ]
-
-  function setFilter(type: FilterType) {
-    currentFilter.value = type
-  }
 
   return {
     currentFilter,
     filters,
-    setFilter,
+    setFilter: filtersStore.setFilter,
   }
 }

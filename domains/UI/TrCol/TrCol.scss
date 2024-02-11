@@ -9,7 +9,8 @@
   }
 
   @include media-md-up {
-    min-width: 330px;
+    flex: 0 0 $col-width;
+    padding-right: 60px;
   }
 
   &__header {

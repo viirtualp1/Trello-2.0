@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nuxt/eslint-config": "^0.2.0",
     "@pinia/nuxt": "^0.5.1",
+    "@types/lodash-es": "^4.17.12",
     "@vueuse/core": "^10.7.2",
     "eslint": "^8.56.0",
     "eslint-config": "^0.3.0",
