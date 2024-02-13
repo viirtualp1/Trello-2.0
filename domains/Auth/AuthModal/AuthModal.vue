@@ -4,16 +4,13 @@
 
     <tr-tabs v-model="activeTab">
       <tr-tab v-for="(tab, idx) in tabs" :key="idx" :model-value="idx">
-        {{ tab }}
+        {{ tab.name }}
       </tr-tab>
     </tr-tabs>
 
     <tr-tabs-content v-model="activeTab">
-      <tr-tab-window :model-value="0">
-        <auth-form />
-      </tr-tab-window>
-      <tr-tab-window :model-value="1">
-        <auth-sign-in-form />
+      <tr-tab-window v-for="(tab, idx) in tabs" :key="idx" :model-value="idx">
+        <component :is="tab.component" />
       </tr-tab-window>
     </tr-tabs-content>
   </tr-modal>
@@ -41,7 +38,11 @@ const emit = defineEmits<{
 const currentIsOpen = useVModel(props, 'isOpen', emit)
 
 const activeTab = ref(0)
-const tabs = ['Войти', 'Регистрация']
+
+const tabs = [
+  { name: 'Войти', component: AuthForm },
+  { name: 'Регистрация', component: AuthSignInForm },
+]
 
 function close() {
   emit('update:is-open', false)
