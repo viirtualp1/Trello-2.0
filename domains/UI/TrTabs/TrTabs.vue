@@ -18,6 +18,7 @@ const emit = defineEmits<{
   (e: 'update:modelValue', v: string | number): void
 }>()
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { activeTab, setActiveTab } = useTabs(props, emit)
 </script>
 
