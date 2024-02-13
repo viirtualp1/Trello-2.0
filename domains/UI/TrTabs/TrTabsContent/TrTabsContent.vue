@@ -7,12 +7,11 @@
 <script setup lang="ts">
 import { useTabs } from '@/domains/UI'
 
-const props = defineProps({
-  modelValue: {
-    type: [String, Number],
-    default: '',
-  },
-})
+interface Props {
+  modelValue: string | number
+}
+
+const props = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'update:modelValue', v: string | number): void

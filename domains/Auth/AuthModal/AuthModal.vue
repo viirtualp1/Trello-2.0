@@ -1,5 +1,5 @@
 <template>
-  <tr-modal :is-open="currentIsOpen" :max-width="500" @close="close">
+  <tr-modal :is-open="currentIsOpen" @close="close">
     <template #title> Войти </template>
 
     <tr-tabs v-model="activeTab">

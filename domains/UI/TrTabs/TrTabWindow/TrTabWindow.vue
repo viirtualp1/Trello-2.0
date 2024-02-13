@@ -7,12 +7,10 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  modelValue: {
-    type: [String, Number],
-    default: '',
-  },
-})
+interface Props {
+  modelValue: string | number
+}
+const props = defineProps<Props>()
 
 const activeTab = inject<Ref<string | number>>('activeTab')
 
