@@ -1,5 +1,7 @@
 <template>
   <div class="auth-form">
+    <tr-input v-model="form.name" label="Имя" />
+
     <tr-input v-model="form.email" label="Email" />
 
     <tr-input v-model="form.password" label="Пароль" />
@@ -13,7 +15,9 @@ import { TrInput, TrButton } from '@/domains/UI'
 import { useAuth } from '@/domains/Auth'
 
 const { login } = useAuth()
+
 const form = reactive({
+  name: 'Никита Зинин',
   email: 'zininnikita309@gmail.com',
   password: 'test123',
 })

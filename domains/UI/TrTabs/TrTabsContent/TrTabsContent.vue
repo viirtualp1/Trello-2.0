@@ -1,5 +1,5 @@
 <template>
-  <div class="tr-tabs">
+  <div class="tr-tabs-content">
     <slot />
   </div>
 </template>
@@ -20,5 +20,3 @@ const emit = defineEmits<{
 
 const { activeTab, setActiveTab } = useTabs(props, emit)
 </script>
-
-<style lang="scss" src="./TrTabs.scss"></style>

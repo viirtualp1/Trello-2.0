@@ -1,2 +1,5 @@
 export * from './TrTab'
+export * from './composables'
+export * from './TrTabsContent'
+export * from './TrTabWindow'
 export { default as TrTabs } from './TrTabs.vue'
