@@ -1,3 +1,13 @@
+@import 'assets/scss/app';
+
 .tr-tabs {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+  background: #f5f6f7;
+  padding: 0 4px;
+  border-radius: $button-border-radius;
+  height: 54px;
 }

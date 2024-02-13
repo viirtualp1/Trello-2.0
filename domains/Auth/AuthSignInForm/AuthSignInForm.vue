@@ -6,7 +6,9 @@
 
     <tr-input v-model="form.password" label="Пароль" />
 
-    <tr-button block @click="submit">Зарегистрироваться</tr-button>
+    <tr-button theme="accent" block @click="submit">
+      Зарегистрироваться
+    </tr-button>
   </div>
 </template>
 

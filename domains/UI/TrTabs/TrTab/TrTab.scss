@@ -1,2 +1,17 @@
+@import 'assets/scss/app';
+
 .tr-tab {
+  width: 50%;
+  height: 50px;
+  border-radius: $button-border-radius;
+
+  &.is-active {
+    height: 48px;
+    background: $color-white;
+    border: 0;
+  }
+
+  &:hover {
+    background: transparent !important;
+  }
 }

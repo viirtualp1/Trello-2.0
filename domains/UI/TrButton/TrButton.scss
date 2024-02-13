@@ -2,7 +2,7 @@
 
 .tr-button {
   border: 0;
-  border-radius: 12px;
+  border-radius: $button-border-radius;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -34,12 +34,23 @@
   &.icon {
     height: 40px;
     padding: 0 0.675rem;
-    border-radius: 12px;
   }
 
   &.block {
     width: 100%;
     padding: 0;
+  }
+
+  &.accent {
+    background: $color-black;
+
+    &:hover {
+      background: lighten($color-black, 5%);
+    }
+
+    .tr-button__body {
+      color: $color-white;
+    }
   }
 
   &.primary {

@@ -4,7 +4,7 @@
 
     <tr-input v-model="form.password" label="Пароль" />
 
-    <tr-button block @click="submit">Войти</tr-button>
+    <tr-button theme="accent" block @click="submit">Войти</tr-button>
   </div>
 </template>
 

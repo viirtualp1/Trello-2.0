@@ -6,6 +6,7 @@ const TrButtonThemes = [
   'success',
   'danger',
   'info',
+  'accent',
 ] as const
 
 type TrButtonAvailableTheme = (typeof TrButtonThemes)[number]
