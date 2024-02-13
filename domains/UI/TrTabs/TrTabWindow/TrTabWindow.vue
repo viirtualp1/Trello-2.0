@@ -1,6 +1,6 @@
 <template>
   <div class="tr-tabs-content">
-    <div v-show="isActive" :class="classes">
+    <div v-show="isActive">
       <slot />
     </div>
   </div>
@@ -17,8 +17,4 @@ const props = defineProps({
 const activeTab = inject<Ref<string | number>>('activeTab')
 
 const isActive = computed(() => activeTab?.value === props.modelValue)
-
-const classes = computed(() => ({
-  'as-tab-window': true,
-}))
 </script>
