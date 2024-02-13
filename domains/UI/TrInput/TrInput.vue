@@ -9,6 +9,7 @@
         <input
           ref="inputRef"
           v-model="currentModelValue"
+          :type="type"
           :placeholder="label"
         />
       </div>
@@ -26,6 +27,7 @@ import { useVModel } from '@vueuse/core'
 const props = defineProps<{
   modelValue: string | number | null
   label: string | null
+  type?: string
 }>()
 
 const emit = defineEmits<{

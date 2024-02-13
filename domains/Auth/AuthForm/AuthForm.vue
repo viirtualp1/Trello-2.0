@@ -1,8 +1,8 @@
 <template>
   <div class="auth-form">
-    <tr-input v-model="form.email" label="Email" />
+    <tr-input v-model="form.email" type="email" label="Email" />
 
-    <tr-input v-model="form.password" label="Пароль" />
+    <tr-input v-model="form.password" type="password" label="Пароль" />
 
     <tr-button theme="accent" block @click="submit">Войти</tr-button>
   </div>
