@@ -2,24 +2,12 @@
 
 .app-sidebar {
   &__button {
-    width: 90%;
+    width: 87%;
     height: 24px;
     transition: 0.3s ease;
 
     &:hover {
       @include generate-box-shadow;
-    }
-
-    @include media-sm-up {
-      width: 87%;
-    }
-
-    @include media-md-up {
-      width: 95%;
-    }
-
-    @include media-sm-down {
-      padding: 8px 14px;
     }
   }
 
