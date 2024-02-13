@@ -1,5 +1,5 @@
 <template>
-  <div class="auth-form">
+  <div class="auth-reg-form">
     <tr-input v-model="form.email" type="email" label="Email" />
 
     <tr-input v-model="form.password" type="password" label="Пароль" />
@@ -23,5 +23,3 @@ function submit() {
   login(form)
 }
 </script>
-
-<style lang="scss" src="./AuthForm.scss"></style>

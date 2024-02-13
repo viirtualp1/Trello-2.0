@@ -1,4 +1,4 @@
-export * from './AuthForm'
+export * from './AuthRegForm'
 export * from './AuthSignInForm'
 export * from './AuthModal'
 export * from './auth.d'

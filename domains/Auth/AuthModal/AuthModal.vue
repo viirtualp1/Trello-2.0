@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
-import { AuthForm, AuthSignInForm } from '@/domains/Auth'
+import { AuthRegForm, AuthSignInForm } from '@/domains/Auth'
 import {
   TrModal,
   TrTabs,
@@ -40,7 +40,7 @@ const currentIsOpen = useVModel(props, 'isOpen', emit)
 const activeTab = ref(0)
 
 const tabs = [
-  { name: 'Войти', component: AuthForm },
+  { name: 'Войти', component: AuthRegForm },
   { name: 'Регистрация', component: AuthSignInForm },
 ]
 
