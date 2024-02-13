@@ -5,8 +5,8 @@
     <tr-list-item
       v-for="(sidebarButton, idx) in sidebarButtons"
       :key="idx"
-      :to="sidebarButton.link"
-      :is-active="sidebarButton.isActive"
+      :to="`/${sidebarButton.type}`"
+      :is-active="route.name === sidebarButton.type"
       class="app-sidebar__button"
     >
       <img :src="sidebarButton.icon" alt="calendar" width="20" height="20" />
@@ -67,26 +67,22 @@ const sidebarButtons = computed(() => [
   {
     text: 'Главная',
     icon: HomeIcon,
-    link: '/',
-    isActive: route.name === 'index',
+    type: 'index',
   },
   {
     text: 'Календарь',
     icon: CalendarIcon,
-    link: '/calendar',
-    isActive: route.name === 'calendar',
+    type: 'calendar',
   },
   {
     text: 'Заметки',
     icon: NotesIcon,
-    link: '/notes',
-    isActive: route.name === 'notes',
+    type: 'notes',
   },
   {
     text: 'Задачи',
     icon: TasksIcon,
-    link: '/tasks',
-    isActive: route.name === 'tasks',
+    type: 'tasks',
   },
 ])
 </script>
