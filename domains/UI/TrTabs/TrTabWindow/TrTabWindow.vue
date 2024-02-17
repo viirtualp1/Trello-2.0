@@ -1,8 +1,6 @@
 <template>
-  <div class="tr-tabs-content">
-    <div v-show="isActive">
-      <slot />
-    </div>
+  <div v-show="isActive" class="tr-tab-window">
+    <slot />
   </div>
 </template>
 
