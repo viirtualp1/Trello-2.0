@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import { useSidebar, AppSidebar } from '@/domains/App'
 import { TrButton } from '@/domains/UI'
-import { SidebarFilters, TasksWeek, TasksAll } from '@/domains/Filters'
+import { SidebarFilters, TasksWeek, TasksAll } from '@/domains/filters'
 
 const { show } = useSidebar()
 

@@ -12,6 +12,7 @@
 
 <script setup lang="ts">
 import { chunk } from 'lodash-es'
+import { Swappable } from '@shopify/draggable'
 import { FilterType, useFilters } from '@/domains/Filters'
 import { TrCol, TrTask } from '@/domains/UI'
 import { useTasks } from '@/domains/Tasks'
@@ -24,6 +25,16 @@ onMounted(() => {
 })
 
 const chunkedTasks = computed(() => chunk(tasksFromStore.value, 3))
+
+onMounted(() => {
+  const tasks = document.querySelectorAll('.tr-task')
+
+  if (tasks.length === 0) {
+    return
+  }
+
+  new Swappable(tasks)
+})
 </script>
 
 <style lang="scss" src="./TasksAll.scss"></style>
